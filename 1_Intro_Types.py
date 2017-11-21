@@ -61,3 +61,30 @@ i2 == i1, i2 is i1
 i2 += 1
 i1, i2
 i1 == i2, i2 is i1
+
+# swap variables in tuples
+a, b, c = 1, 2, 3
+a, b = b, a
+
+w = 5, 6, 7
+x, y, z = w
+
+a = range(10)
+
+a[3]
+a[-3]
+list(a[3:6])
+a[3:-3]
+a[6:3]
+a[:6]
+a[0:6:2]
+a[2:4] = ['x']
+list(a)
+a[-1:] = 'abc'
+
+list(a)
+
+# Sequence operations
+a = range(4)
+list(a) + [9, 8, 7]
+a * 4
