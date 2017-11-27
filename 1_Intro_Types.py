@@ -84,7 +84,7 @@ a[-1:] = 'abc'
 
 list(a)
 
-# Sequence operations: in Python3 range is an iterable, to make a list out of it
+# Sequence operations: in Python3 range is an iterable, to make a list
 a = list(range(4))
 a + [9, 8, 7]
 a * 4
@@ -97,3 +97,42 @@ b[0][0] = 1
 a = a
 a += [9]
 a.append(7)
+
+# Variable, binding, call-by-value
+i = 3
+i = "hello"
+
+
+def foo(a):
+    a.append(6)
+
+
+x = list(range(3))
+foo(x)
+print(x)
+
+
+def bar(a):
+    a = [5]
+
+
+x = list(range(3))
+bar(x)
+print(x)
+
+# Loops
+epsilon = 1.0
+
+while 1+epsilon > 1:
+    epsilon /= 2
+    print(epsilon)
+
+for c in 'hello':
+    print(c)
+
+help(enumerate)
+
+for index, item in enumerate('my data'):
+    print(item, ' was in position ', index)
+
+list(enumerate(range(10, 20)))
