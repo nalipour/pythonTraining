@@ -84,7 +84,16 @@ a[-1:] = 'abc'
 
 list(a)
 
-# Sequence operations
-a = range(4)
-list(a) + [9, 8, 7]
+# Sequence operations: in Python3 range is an iterable, to make a list out of it
+a = list(range(4))
+a + [9, 8, 7]
 a * 4
+b = [[0] * 4] * 4
+b[0][0] = 1
+
+3 in a
+3 not in a
+# max([1, 'x', 2, 'a'])  # not supported by python3
+a = a
+a += [9]
+a.append(7)
