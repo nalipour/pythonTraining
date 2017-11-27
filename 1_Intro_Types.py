@@ -136,3 +136,20 @@ for index, item in enumerate('my data'):
     print(item, ' was in position ', index)
 
 list(enumerate(range(10, 20)))
+
+
+# Dictionaries
+type({})
+d = {}
+d = dict()  # Empty dictionary
+d[1] = 'eins'
+d[2] = 'zwei'
+d[1]
+# d['eins']  # key error
+len(d)
+1 in d
+'eins' in d
+1 not in d
+
+squares = {2: 4, 3: 9, 4: 16, 5: 25}
+dict(a=1, b=2, c=3)
