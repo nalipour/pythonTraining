@@ -26,6 +26,13 @@ def fibi(n):
     return c
 
 
+def fibir(n, c=1, p=1):
+    """ stack size exceeds if n>10000 """
+    if n > 1:
+        return fibir(n-1, c+p, c)
+    return c
+
+
 # tuple(map(fibi, range(10)))  # a good way to evaluate function
 
 
