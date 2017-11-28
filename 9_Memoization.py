@@ -1,8 +1,8 @@
 import time as t
 
 
-# recursive Fibonacci
 def fib(n):
+    """ recursive Fibonacci """
     if n < 2:
         return 1
     else:
@@ -19,8 +19,8 @@ def time(f):
 # time(fib(35))
 
 
-# memoizer closure answer
 def memo(fn):
+    """ memoizer closure answer """
     cache = {}
 
     def proxy(*args, **kwds):
