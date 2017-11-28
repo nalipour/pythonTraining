@@ -121,7 +121,7 @@ weired_add(1)(2)
 # Lambda, Higher-order functions
 lambda a, b, c: a * b + c
 (lambda a, b, c: a * b + c)(1, 2, 3)
-lambda a, b, c: a * b + c(2, 3, 4)
+lambda a, b, c: a * b + c(2, 3, 4)  # c is a callable with 3 inputs
 list(map(lambda a: a+1, [1, 2, 3, 4]))
 list(filter(lambda x: x % 2, range(20)))
 functools.reduce(lambda a, b: a * b, range(1, 5))
