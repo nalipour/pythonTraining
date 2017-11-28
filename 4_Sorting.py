@@ -1,3 +1,5 @@
+from functools import partial
+
 # Keys for sorting
 
 d = dict()
@@ -57,3 +59,39 @@ with open('/etc/passwd') as f:
             data.append((uname, int(uid)))
 
 sorted(data, key=my_key(1))
+
+# Currying
+
+
+def weired_add(a):
+    def add(b):
+        return a+b
+    return add
+
+
+weired_add(1)(2)
+
+# Given the key defined as defined in xkey, make the sort
+# partial from functools
+
+
+def xkey(n, record):
+    return record[n]
+
+
+data = []
+with open('/etc/passwd') as f:
+    for line in f:
+        if len(line.split(':')) > 3:
+            uname, _, uid, _ = line.split(':', 3)
+            data.append((uname, int(uid)))
+
+sorted(data, key=partial(xkey, 1))
+
+
+def addd(a, b, c, d):
+    return a+b+c+d
+
+
+add10 = partial(addd, 3, 7)
+add10(1, 2)
