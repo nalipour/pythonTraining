@@ -45,7 +45,10 @@ class Q:
         self._q.append(item)
 
     def remove(self):
-        return self._q.pop(0)
+        try:
+            return self._q.pop(0)
+        except IndexError:
+            raise EmptyQueue  # ("extra details")
 
 
 # Inheritance
@@ -67,10 +70,12 @@ class AddCounter(Counter):
 a = Counter(10)
 a.up(2)
 print(a._count)
+str(Counter)
 
 AddCounter
 repr(Counter)
 repr(AddCounter)
+AddCounter(4) == AddCounter(2)
 
 c = Counter(3)
 a = AddCounter(4)
@@ -79,3 +84,14 @@ a + a
 
 c + a
 a + c
+
+
+# Emergency Queue Classes
+class EmergencyQueue(Q):
+
+    def addFront(self, item):
+        self._q.insert(0, item)
+
+
+class EmptyQueue(Exception):
+    pass
