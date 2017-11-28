@@ -85,3 +85,14 @@ def addd(a, b, c, d):
 
 add10 = partial(addd, 3, 7)
 add10(1, 2)
+
+
+# lambda
+data = []
+with open('/etc/passwd') as f:
+    for line in f:
+        if len(line.split(':')) > 3:
+            uname, _, uid, _ = line.split(':', 3)
+            data.append((uname, int(uid)))
+
+sorted(data, key=lambda a: a[1])
