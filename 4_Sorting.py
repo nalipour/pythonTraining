@@ -60,16 +60,6 @@ with open('/etc/passwd') as f:
 
 sorted(data, key=my_key(1))
 
-# Currying
-
-
-def weired_add(a):
-    def add(b):
-        return a+b
-    return add
-
-
-weired_add(1)(2)
 
 # Given the key defined as defined in xkey, make the sort
 # partial from functools

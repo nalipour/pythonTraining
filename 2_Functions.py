@@ -1,4 +1,5 @@
 import math
+import functools
 
 help(zip)
 list(zip(range(10), 'hello'))
@@ -104,3 +105,23 @@ print(l)
 print(o)
 
 print(hash('hello'))
+
+
+# Currying
+
+
+def weired_add(a):
+    def add(b):
+        return a+b
+    return add
+
+
+weired_add(1)(2)
+
+# Lambda, Higher-order functions
+lambda a, b, c: a * b + c
+(lambda a, b, c: a * b + c)(1, 2, 3)
+lambda a, b, c: a * b + c(2, 3, 4)
+list(map(lambda a: a+1, [1, 2, 3, 4]))
+list(filter(lambda x: x % 2, range(20)))
+functools.reduce(lambda a, b: a * b, range(1, 5))
